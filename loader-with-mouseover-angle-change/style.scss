@@ -1,0 +1,39 @@
+$radius: 100px;
+$trackWidth: 10px;
+$trackColor: #ADD8E6;
+$spinnerColor: #A9B5EC;
+$startAngle: -45deg;
+
+@keyframes spinning {
+  from {rotate: $startAngle}
+  to {rotate: $startAngle + 360deg}
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 2*$radius;
+  height: 2*$radius;
+  position: relative;
+  border: $trackWidth solid $trackColor;
+  border-radius: 100%;
+  animation-name: spinning;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  rotate: $startAngle;
+
+  .spinner {
+    width: $radius;
+    height: $radius;
+    border-top: $trackWidth solid $spinnerColor;
+    border-right: $trackWidth solid $spinnerColor;
+    border-top-right-radius: 100%;
+    position: absolute;
+    right: -$trackWidth;
+    top: -$trackWidth;
+  }
+}
