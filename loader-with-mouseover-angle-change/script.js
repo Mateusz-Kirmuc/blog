@@ -35,5 +35,5 @@ loader.addEventListener('mouseenter', (event) => {
 
 loader.addEventListener('mouseleave', (event) => {
     loader.style.animationName = 'spinning';
-    loader.style.animationDuration = '15s';
+    loader.style.animationDuration = '1s';
 })
