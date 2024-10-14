@@ -8,9 +8,9 @@
 @keyframes mask {
   0% {
     --percent: 0%;
+    transform: scaleX(1);
   }
   49.999% {
-
     transform: scaleX(1);
   }
   50% {
@@ -23,17 +23,19 @@
   }
 }
 
+@keyframes spinning {
+  from {rotate: 0deg}
+  to {rotate: 360deg}
+}
+
 
 .circular-progress {
   border: solid 0.2em green;
-  width: 10rem;
+  width: 5rem;
   aspect-ratio: 1;
   border-radius: 50%;
   --mask: conic-gradient(white var(--percent), transparent 0%);
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  animation: mask 2s infinite;
-
-  //animation: mask 1000s linear;
-  //animation-delay: -498s;
+  animation: mask 2s infinite, spinning 2s linear infinite;
 }
